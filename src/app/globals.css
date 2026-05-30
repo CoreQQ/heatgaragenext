@@ -171,13 +171,20 @@ h2.section-title { font-family:var(--fd); font-size:clamp(2.2rem,5vw,4rem); line
 /* ─────────────────────────────────────────
    SERVICES / TABS
 ───────────────────────────────────────── */
-.services-tabs { display:flex; flex-wrap:wrap; border:1px solid var(--border); margin-top:1.5rem; }
+.services-tabs {
+  display:flex; flex-wrap:nowrap;
+  border:1px solid var(--border); margin-top:1.5rem;
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.services-tabs::-webkit-scrollbar { display:none; }
 .tab-btn {
   background:transparent; border:none; border-right:1px solid var(--border);
   color:var(--text3); padding:.7rem 1.4rem;
   font-family:var(--fb); font-size:.8rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
   cursor:pointer; transition:background var(--ease), color var(--ease);
   position:relative; overflow:hidden;
+  white-space:nowrap; flex-shrink:0;
 }
 .tab-btn:last-child { border-right:none; }
 .tab-btn.active { background:var(--pink); color:#fff; }

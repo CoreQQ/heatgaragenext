@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 
 export default function Preloader() {
   const [hidden, setHidden] = useState(false)
@@ -16,7 +15,8 @@ export default function Preloader() {
 
   return (
     <div id="preloader" className={hidden ? 'hide' : ''}>
-      <Image src="/logo.PNG" alt="Heat Garage" width={120} height={120} style={{ objectFit: 'contain' }} priority />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo.PNG" alt="Heat Garage" width={120} height={120} style={{ objectFit: 'contain' }} />
       <div className="pre-bar" />
       <div className="pre-dots"><span /><span /><span /></div>
     </div>
