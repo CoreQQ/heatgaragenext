@@ -172,10 +172,9 @@ h2.section-title { font-family:var(--fd); font-size:clamp(2.2rem,5vw,4rem); line
    SERVICES / TABS
 ───────────────────────────────────────── */
 .services-tabs {
-  display:flex; flex-wrap:nowrap;
-  border:1px solid var(--border); margin-top:1.5rem;
-  overflow-x:auto; -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  border: 1px solid var(--border); margin-top:1.5rem;
 }
 .services-tabs::-webkit-scrollbar { display:none; }
 .tab-btn {
