@@ -191,11 +191,14 @@ h2.section-title { font-family:var(--fd); font-size:clamp(2.2rem,5vw,4rem); line
 .tab-btn.active { background:var(--pink); color:#fff; }
 .tab-btn:not(.active):hover { background:var(--bg3); color:var(--text); }
 
-@media (min-width:769px) {
-  .services-tabs {
-    grid-template-columns: repeat(5, 1fr);
-  }
+@media (max-width:768px) {
+  .services-tabs .tab-btn:nth-child(4) { grid-column: 1 / 2; }
+  .services-tabs .tab-btn:nth-child(5) { grid-column: 2 / 4; }
 }
+@media (min-width:769px) {
+  .services-tabs { grid-template-columns: repeat(5, 1fr); }
+}
+.tab-panels { margin-top:1px; border:1px solid var(--border); border-top:none; }
 
 /* ─────────────────────────────────────────
    HOW WE WORK
