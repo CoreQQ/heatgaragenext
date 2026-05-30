@@ -173,32 +173,29 @@ h2.section-title { font-family:var(--fd); font-size:clamp(2.2rem,5vw,4rem); line
 ───────────────────────────────────────── */
 .services-tabs {
   display:grid;
-  grid-template-columns: repeat(3,1fr);
-  border: 1px solid var(--border); margin-top:1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  border:1px solid var(--border);
+  gap:1px;
+  background:var(--border);
+  margin-top:1.5rem;
 }
-.services-tabs::-webkit-scrollbar { display:none; }
 .tab-btn {
-  background:transparent; border:none; border-right:1px solid var(--border);
-  color:var(--text3); padding:.7rem 1.4rem;
+  background:var(--bg);
+  border:none;
+  color:var(--text3); padding:.7rem 1rem;
   font-family:var(--fb); font-size:.8rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
   cursor:pointer; transition:background var(--ease), color var(--ease);
   position:relative; overflow:hidden;
-  white-space:nowrap; flex-shrink:0;
+  white-space:nowrap; text-align:center;
 }
-.tab-btn:last-child { border-right:none; }
 .tab-btn.active { background:var(--pink); color:#fff; }
 .tab-btn:not(.active):hover { background:var(--bg3); color:var(--text); }
-.tab-panels { margin-top:1px; }
-.tab-panel { display:none; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1px; background:var(--border); opacity:0; transition:opacity .35s ease; }
-.tab-panel.active { display:grid; }
-.tab-panel.visible { opacity:1; }
-.service-card { background:var(--bg2); padding:1.8rem; position:relative; overflow:hidden; transition:background var(--ease), transform var(--ease); will-change:transform; }
-.service-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--pink); transform:scaleY(0); transform-origin:bottom; transition:transform .35s ease; }
-.service-card:hover { background:var(--bg3); transform:translateY(-2px); }
-.service-card:hover::before { transform:scaleY(1); }
-.service-card h3 { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:.5rem; }
-.service-card p  { font-size:.82rem; color:var(--text3); line-height:1.55; }
-.service-card .price { display:inline-block; margin-top:1rem; font-size:.78rem; font-weight:700; color:var(--pink); letter-spacing:.06em; text-transform:uppercase; }
+
+@media (min-width:769px) {
+  .services-tabs {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 
 /* ─────────────────────────────────────────
    HOW WE WORK
