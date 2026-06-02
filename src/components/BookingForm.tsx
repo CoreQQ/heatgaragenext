@@ -79,7 +79,7 @@ export default function BookingForm() {
       </div>
       <div className="form-group">
         <label htmlFor="ftime">Preferred Date &amp; Time</label>
-        <input type="datetime-local" id="ftime" />
+        <input type="datetime-local" id="ftime" style={{colorScheme:'dark'}} />
       </div>
       <div className="form-group">
         <label htmlFor="fdesc">Describe the Issue</label>

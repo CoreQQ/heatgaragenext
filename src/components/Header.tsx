@@ -31,8 +31,9 @@ export default function Header() {
 
   return (
     <>
-      <header ref={headerRef} className={scrolled ? 'scrolled' : ''}>
-        <a href="#hero" className="logo" onClick={e => smoothScroll(e, '#hero')}>
+      <header ref={headerRef} className={scrolled ? 'scrolled' : ''} style={{justifyContent:'space-between'}}>
+        <div style={{width:'40px'}} />
+        <a href="#hero" className="logo" onClick={e => smoothScroll(e, '#hero')} style={{position:'absolute',left:'50%',transform:'translateX(-50%)'}}>
           <Image src="/logo.PNG" alt="Heat Garage" className="logo-img" width={46} height={46} />
         </a>
         <nav aria-label="Main navigation">
