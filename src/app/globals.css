@@ -68,7 +68,12 @@ header {
 }
 header.scrolled { background:rgba(10,10,10,.98); border-bottom-color:var(--pink); }
 .logo { display:flex; align-items:center; text-decoration:none; }
-.logo-img { height:40px; width:auto; object-fit:contain; display:block; }
+.logo-spacer { display:none; }
+
+@media (max-width:768px) {
+  .logo { position:absolute; left:50%; transform:translateX(-50%); }
+  .logo-spacer { display:block; width:40px; flex-shrink:0; }
+}
 nav { display:flex; align-items:center; gap:2rem; }
 nav a {
   color:var(--text2); text-decoration:none;
