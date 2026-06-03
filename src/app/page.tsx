@@ -7,6 +7,7 @@ import ServicesTabs from '@/components/ServicesTabs'
 import StepsGrid from '@/components/StepsGrid'
 import FadeUpGrid from '@/components/FadeUpGrid'
 import BookingForm from '@/components/BookingForm'
+import GoogleMap from '@/components/GoogleMap'
 import { ADVANTAGES, GALLERY, REVIEWS } from '@/lib/data'
 
 const StarIcon = () => (
@@ -275,10 +276,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <div className="map-placeholder">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Greenogue Business Park<br />Rathcoole, Dublin</span>
-              </div>
+              <GoogleMap />
             </div>
           </div>
         </div>
