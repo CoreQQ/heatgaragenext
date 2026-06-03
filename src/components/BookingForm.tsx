@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { BMW_MODELS, SERVICE_TYPES } from '@/lib/data'
 
-const TG_TOKEN   = '8665955426:AAGQaMa8vjsq8PxVr7UmAfSYdFAAKHbgydY'
+const TG_TOKEN   = '8665955426:AAFDtoZwdixaVVskg6XOB3X9qi77Kf98JBc'
 const TG_CHAT_ID = '-1003831790467'
 
 export default function BookingForm() {
