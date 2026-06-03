@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { BMW_MODELS, SERVICE_TYPES } from '@/lib/data'
 
+const TG_TOKEN   = '8665955426:AAGQaMa8vjsq8PxVr7UmAfSYdFAAKHbgydY'
+const TG_CHAT_ID = '-5234614318'
+
 export default function BookingForm() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -16,12 +19,16 @@ export default function BookingForm() {
 
     if (!name || !phone) { alert('Please fill in your name and phone number.'); return }
 
+    const formattedTime = time ? new Date(time).toLocaleString('en-IE') : '—'
+
+    const text = `🚗 NEW BOOKING — Heat Garage\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚘 Model: ${model || '—'}\n🔧 Service: ${service || '—'}\n📅 Time: ${formattedTime}\n📝 Notes: ${desc || '—'}`
+
     setLoading(true)
     try {
-      const res = await fetch('/api/booking', {
+      const res = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, model, service, time, desc }),
+        body: JSON.stringify({ chat_id: TG_CHAT_ID, text }),
       })
       const data = await res.json()
       if (data.ok) {
